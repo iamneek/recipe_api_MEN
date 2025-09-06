@@ -6,7 +6,13 @@ const recipeSchema = mongoose.Schema({
         required: [true, "Recipe must have a name"]
     },
     ingredients: {
-        type: String,
+        type: [String],
+        validate: {
+            validator: function (err) {
+                return err.length > 0
+            },
+            message: "Ateast enter a single ingredient"
+        },
         required: [true, "As far as I recall, all the recipes had to have ingredients list..."]
     },
     instructions: {
@@ -16,8 +22,11 @@ const recipeSchema = mongoose.Schema({
     timeTaken: {
         type: String,
         required: false,
-        default: 0
+        default: "0 minutes"
     }
 }, {
     timestamps: true
 })
+
+const recipeModel = mongoose.model('recipes', recipeSchema)
+module.exports = recipeModel
