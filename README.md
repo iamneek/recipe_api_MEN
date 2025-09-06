@@ -24,7 +24,7 @@ A simple backend API for managing recipes, built with **Node.js**, **Express**, 
 ### ⚡ Installation
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/iamneek/recipe_api_MEN
+   git clone https://github.com/iamneek/recipe_api_MEN.git
    cd recipe_api_MEN
    ```
 2. **Install dependencies:**
